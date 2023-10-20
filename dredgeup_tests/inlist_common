@@ -11,7 +11,7 @@
 ! network
 
       change_net = .true.
-      new_net_name = 'pp_extras.net'
+      new_net_name = 'hot_cno.net'
 
       show_net_species_info = .true.
 

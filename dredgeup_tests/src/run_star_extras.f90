@@ -124,7 +124,7 @@
          ierr = 0
          call star_ptr(id, s, ierr)
          if (ierr /= 0) return
-         how_many_extra_history_columns = 4
+         how_many_extra_history_columns = 5
       end function how_many_extra_history_columns
       
       
@@ -135,15 +135,15 @@
          real(dp) :: age_at_TP, age_TP1, mcore_at_TP, mcore_TP1, surface_opacity, surface_opacity_TP1
          real(dp) :: c12_c13, c12_c13_TP1, n14_n15, n14_n15_TP1, c_o, c_o_TP1, surface_c12, prev_surface_c12
          integer, intent(out) :: ierr
-         integer :: k
+         integer :: k, surf_type
          type (star_info), pointer :: s
          ierr = 0
          call star_ptr(id, s, ierr)
          if (ierr /= 0) return
          
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! Counting TPs and retrieving stats
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+         ! Counting TPs and retrieving stats
+         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
          surface_c12 = s% xa(s% net_iso(ic12), 1)
 
@@ -164,6 +164,18 @@
                  n14_n15 = (s% xa(s% net_iso(in14), 1)) / (s% xa(s% net_iso(in15), 1))
                  c_o = (s% xa(s% net_iso(ic12), 1) + s% xa(s% net_iso(ic13), 1)) / (s% xa(s% net_iso(io16), 1) + s% xa(s% net_iso(io17), 1) + s% xa(s% net_iso(io18), 1))
                
+                 if (c_o .le. 0.45) then
+                    surf_type = 0 ! undef
+                 else if ((c_o .gt. 0.45) .and. (c_o .le. 0.55)) then
+                    surf_type = 1 ! M type                
+                 else if ((c_o .gt. 0.55) .and. (c_o .le. 0.95)) then
+                    surf_type = 2 ! S type        
+                 else if ((c_o .gt. 0.95) .and. (c_o .le. 1.05)) then
+                    surf_type = 3 ! SC type                           
+                 else if (c_o .gt. 1.05) then
+                    surf_type = 4 ! C type                
+                 end if
+
                 ! quantities at outset of TP-AGB phase
                  if (TP_count == 1) then
                  mcore_TP1 = s% he_core_mass
@@ -175,7 +187,7 @@
                  endif
 
                  open(1, file='agb_stats.dat', action='write', position='append')
-                 write(1,*) 'TP_count=', TP_count, 'age_at_TP=', age_at_TP, 'mcore_at_TP=', mcore_at_TP, 'surface_opacity', surface_opacity, 'c12_c13', c12_c13, 'n14_n15', n14_n15, 'c_o', c_o
+                 write(1,*) 'TP_count=', TP_count, 'age_at_TP=', age_at_TP, 'mcore_at_TP=', mcore_at_TP, 'surface_opacity', surface_opacity, 'c12_c13', c12_c13, 'n14_n15', n14_n15, 'c_o', c_o, 'type', surf_type 
                  close(1)
              else
                  if (s% power_h_burn/s% power_he_burn .gt. 10) active_thermalpulse = .false. 
@@ -183,9 +195,9 @@
              end if
          end if
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! measuring dredge up
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+         ! measuring dredge up
+         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
          if (active_thermalpulse .eqv. .true.) then
             dredgeup = 0
@@ -204,14 +216,13 @@
          prev_surface_c12 = surface_c12
 
    !      mag_conv_env = 0
-
    !      do k=1, s% nz
    !         if (mixing_type = 1) then
    !            mag_conv_env = mag_conv_env + 1
    !         end if
    !      enddo
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
          names(1) = 'c12_c13'
          vals(1) = c12_c13
@@ -224,6 +235,9 @@
 
          names(4) = 'dredgeup'
          vals(4) = dredgeup
+
+         names(5) = 'surf_type'
+         vals(5) = surf_type        
 
       end subroutine data_for_extra_history_columns
 

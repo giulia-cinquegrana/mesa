@@ -1,0 +1,521 @@
+DATE: 2023-10-20
+TIME: 18:31:07
+ reading user weak rate file /Users/giuliaccinquegrana/Documents/mesa/data/rates_data/rate_tables/S13_r_be7_wk_li7.h5
+ version_number 0edb5b8
+ read inlist_common
+ read inlist_toAGBeep
+
+
+ The terminal output contains the following information
+
+      'step' is the number of steps since the start of the run,
+      'lg_dt' is log10 timestep in years,
+      'age_yr' is the simulated years since the start run,
+      'lg_Tcntr' is log10 center temperature (K),
+      'lg_Dcntr' is log10 center density (g/cm^3),
+      'lg_Tmax' is log10 max temperature (K),
+      'Teff' is the surface temperature (K),
+      'lg_R' is log10 surface radius (Rsun),
+      'lg_L' is log10 surface luminosity (Lsun),
+      'lg_LH' is log10 total PP and CNO hydrogen burning power (Lsun),
+      'lg_L3a' is log10 total triple-alpha helium burning power (Lsun),
+      'lg_gsurf' is log10 surface gravity,
+      'lg_LNuc' is log10 nuclear power (Lsun),
+      'lg_LNeu' is log10 total neutrino power (Lsun),
+      'lg_Lphoto' is log10 total photodisintegration (Lsun),
+      'Mass' is the total stellar baryonic mass (Msun),
+      'lg_Mdot' is log10 magnitude of rate of change of mass (Msun/year),
+      'lg_Dsurf' is log10 surface density (g/cm^3),
+      'H_env' is the amount of mass where H is dominant,
+      'He_core' is the largest mass where He is dominant.
+      'CO_core' is the largest mass where CO is dominant.
+      'H_cntr' is the center H1 mass fraction,
+      'He_cntr' is the center He4 mass fraction,
+      'C_cntr' is the center C12 mass fraction,
+      'N_cntr' is the center N14 mass fraction,
+      'O_cntr' is the center O16 mass fraction,
+      'Ne_cntr' is the center Ne20 mass fraction,
+      'gam_cntr' is the center plasma interaction parameter,
+      'eta_cntr' is the center electron degeneracy parameter,
+      'zones' is the number of zones in the current model,
+      'iters' is the number of solver iterations for the current step,
+      'retry' is the number of step retries required during the run,
+      'dt_limit' is an indication of what limited the timestep.
+
+ All this and more are saved in the LOGS directory during the run.
+load saved model TACHeB.mod
+
+ read history_ts.list
+                             set_initial_number_retries           0
+ net name hot_cno.net
+ species
+     1   h1      
+     2   he3     
+     3   he4     
+     4   c12     
+     5   c13     
+     6   n13     
+     7   n14     
+     8   n15     
+     9   o15     
+    10   o16     
+    11   o17     
+    12   o18     
+    13   f17     
+    14   f18     
+    15   ne20    
+    16   mg24    
+
+ kap_option a09
+ kap_CO_option a09_co
+ kap_lowT_option AESOPUS
+                                        OMP_NUM_THREADS          12
+
+
+__________________________________________________________________________________________________________________________________________________
+
+       step    lg_Tmax     Teff     lg_LH      lg_Lnuc     Mass       H_rich     H_cntr     N_cntr     Y_surf   eta_cntr   zones  retry
+  lg_dt_yrs    lg_Tcntr    lg_R     lg_L3a     lg_Lneu     lg_Mdot    He_core    He_cntr    O_cntr     Z_surf   gam_cntr   iters  
+    age_yrs    lg_Dcntr    lg_L     lg_LZ      lg_Lphoto   lg_Dsurf   CO_core    C_cntr     Ne_cntr    Z_cntr   v_div_cs       dt_limit
+__________________________________________________________________________________________________________________________________________________
+
+ fraction of H envelope left=  0.80413349606374718     
+ Thermal pulse over
+ fraction of H envelope left=  0.80400207313606198     
+ Thermal pulse over
+ fraction of H envelope left=  0.80392879122175287     
+ Thermal pulse over
+ fraction of H envelope left=  0.80383310079657722     
+ Thermal pulse over
+ fraction of H envelope left=  0.80376648087878932     
+ Thermal pulse over
+ fraction of H envelope left=  0.80369743842108909     
+ Thermal pulse over
+ fraction of H envelope left=  0.80366836790914131     
+ Thermal pulse over
+ fraction of H envelope left=  0.80363445231376762     
+ Thermal pulse over
+       1020   8.116464   4777.917   1.811309   2.059931   2.386995   1.918133   0.000000   0.000000   0.289430   3.785232   1616      0
+ 4.9453E+00   8.108522   1.194501   1.507110   0.684590 -15.067864   0.468862   0.000000   0.595434   0.013483   1.988032     10
+ 7.5487E+08   5.184016   2.060650   1.252664 -52.613689  -7.670928   0.174694   0.389715   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    5.1466496585420263D-13
+                       log_rel_run_E_err       -9.0037653577319912
+
+ fraction of H envelope left=  0.80357661411579795     
+ Thermal pulse over
+ fraction of H envelope left=  0.80354406120074495     
+ Thermal pulse over
+ fraction of H envelope left=  0.80351756463960222     
+ Thermal pulse over
+ fraction of H envelope left=  0.80344912781748357     
+ Thermal pulse over
+ fraction of H envelope left=  0.80342550802495771     
+ Thermal pulse over
+ fraction of H envelope left=  0.80339689174000806     
+ Thermal pulse over
+ fraction of H envelope left=  0.80333405704866567     
+ Thermal pulse over
+ fraction of H envelope left=  0.80331164852812598     
+ Thermal pulse over
+ fraction of H envelope left=  0.80327167657764686     
+ Thermal pulse over
+ fraction of H envelope left=  0.80324200042962879     
+ Thermal pulse over
+       1030   8.117785   4774.710   1.805846   2.064402   2.386995   1.917158   0.000000   0.000000   0.289430   3.839193   1622      0
+ 5.1038E+00   8.109600   1.197278   1.525318   0.681285 -15.050102   0.469837   0.000000   0.595435   0.013483   1.998607     10
+ 7.5588E+08   5.194161   2.065038   1.267480 -50.690369  -7.673623   0.178814   0.389715   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    7.4614186153700662D-13
+                       log_rel_run_E_err       -9.0046757178697359
+
+ fraction of H envelope left=  0.80316811288734136     
+ Thermal pulse over
+ fraction of H envelope left=  0.80314812690749293     
+ Thermal pulse over
+ fraction of H envelope left=  0.80310028169450809     
+ Thermal pulse over
+ fraction of H envelope left=  0.80307211963603553     
+ Thermal pulse over
+ fraction of H envelope left=  0.80304335194213428     
+ Thermal pulse over
+ fraction of H envelope left=  0.80298642219673433     
+ Thermal pulse over
+ fraction of H envelope left=  0.80295553477852832     
+ Thermal pulse over
+ fraction of H envelope left=  0.80291859100514262     
+ Thermal pulse over
+ fraction of H envelope left=  0.80288316131912374     
+ Thermal pulse over
+ fraction of H envelope left=  0.80282956256589877     
+ Thermal pulse over
+       1040   8.119115   4770.863   1.800393   2.069395   2.386995   1.916268   0.000000   0.000000   0.289430   3.898568   1619      0
+ 5.0372E+00   8.110563   1.200486   1.543819   0.678120 -15.028141   0.470727   0.000000   0.595436   0.013483   2.010646     10
+ 7.5689E+08   5.204874   2.070053   1.283153 -52.079756  -7.676722   0.183711   0.389714   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    3.8789528510893523D-13
+                       log_rel_run_E_err       -9.0057295089288427
+
+ fraction of H envelope left=  0.80279504133303559     
+ Thermal pulse over
+ fraction of H envelope left=  0.80276233700740640     
+ Thermal pulse over
+ fraction of H envelope left=  0.80272963268202013     
+ Thermal pulse over
+ fraction of H envelope left=  0.80268966073053805     
+ Thermal pulse over
+ fraction of H envelope left=  0.80264332960621887     
+ Thermal pulse over
+ fraction of H envelope left=  0.80261335063933503     
+ Thermal pulse over
+ fraction of H envelope left=  0.80255520961911597     
+ Thermal pulse over
+ fraction of H envelope left=  0.80252159683900703     
+ Thermal pulse over
+ fraction of H envelope left=  0.80247435726051108     
+ Thermal pulse over
+ fraction of H envelope left=  0.80243529376181721     
+ Thermal pulse over
+       1050   8.120513   4766.625   1.794238   2.074778   2.386995   1.915313   0.000000   0.000000   0.289430   3.964653   1627      0
+ 4.9742E+00   8.111465   1.203973   1.563160   0.674555 -15.004238   0.471682   0.000000   0.595436   0.013483   2.024321     10
+ 7.5792E+08   5.216412   2.075484   1.299994 -53.020716  -7.680085   0.188044   0.389714   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    4.8392643418663961D-13
+                       log_rel_run_E_err       -9.0070349355446488
+
+ fraction of H envelope left=  0.80239501899224430     
+ Thermal pulse over
+ fraction of H envelope left=  0.80236504002647191     
+ Thermal pulse over
+ fraction of H envelope left=  0.80233051879429351     
+ Thermal pulse over
+ fraction of H envelope left=  0.80229478629106354     
+ Thermal pulse over
+ fraction of H envelope left=  0.80225663124577340     
+ Thermal pulse over
+ fraction of H envelope left=  0.80221484238737850     
+ Thermal pulse over
+ fraction of H envelope left=  0.80216820844325465     
+ Thermal pulse over
+ fraction of H envelope left=  0.80213792665613415     
+ Thermal pulse over
+ fraction of H envelope left=  0.80207251801083068     
+ Thermal pulse over
+ fraction of H envelope left=  0.80203557423557770     
+ Thermal pulse over
+       1060   8.121933   4762.298   1.787336   2.080351   2.386995   1.914409   0.000000   0.000000   0.289430   4.035036   1617      0
+ 4.9840E+00   8.112318   1.207570   1.582915   0.670536 -14.980031   0.472586   0.000000   0.595436   0.013483   2.039017     10
+ 7.5894E+08   5.228396   2.081099   1.317359 -52.418210  -7.683556   0.193347   0.389714   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    4.4837183693113207D-13
+                       log_rel_run_E_err       -9.0083557733075992
+
+ fraction of H envelope left=  0.80201619389067158     
+ Thermal pulse over
+ fraction of H envelope left=  0.80196350359247015     
+ Thermal pulse over
+ fraction of H envelope left=  0.80192943658645022     
+ Thermal pulse over
+ fraction of H envelope left=  0.80189703507810561     
+ Thermal pulse over
+ fraction of H envelope left=  0.80187023569828386     
+ Thermal pulse over
+ fraction of H envelope left=  0.80184358772731446     
+ Thermal pulse over
+ fraction of H envelope left=  0.80181088340114015     
+ Thermal pulse over
+ fraction of H envelope left=  0.80175395365257429     
+ Thermal pulse over
+ fraction of H envelope left=  0.80170459434589758     
+ Thermal pulse over
+ fraction of H envelope left=  0.80167151149563010     
+ Thermal pulse over
+       1070   8.123393   4757.725   1.779485   2.086202   2.386995   1.913480   0.000000   0.000000   0.289430   4.110585   1613      0
+ 5.0060E+00   8.113159   1.211350   1.603381   0.665951 -14.954742   0.473515   0.000000   0.595436   0.013483   2.054841     10
+ 7.5995E+08   5.240989   2.086991   1.335446 -99.000000  -7.687201   0.198292   0.389714   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    4.4242373768025796D-13
+                       log_rel_run_E_err       -9.0098611412984884
+
+ fraction of H envelope left=  0.80162730009353778     
+ Thermal pulse over
+ fraction of H envelope left=  0.80159951655520778     
+ Thermal pulse over
+ fraction of H envelope left=  0.80157044604160865     
+ Thermal pulse over
+ fraction of H envelope left=  0.80154137552805294     
+ Thermal pulse over
+ fraction of H envelope left=  0.80151109374341456     
+ Thermal pulse over
+ fraction of H envelope left=  0.80147838941668914     
+ Thermal pulse over
+ fraction of H envelope left=  0.80144598790769161     
+ Thermal pulse over
+ fraction of H envelope left=  0.80138300180503930     
+ Thermal pulse over
+ fraction of H envelope left=  0.80136331864004529     
+ Thermal pulse over
+ fraction of H envelope left=  0.80130881143056953     
+ Thermal pulse over
+       1080   8.124906   4752.662   1.770561   2.092369   2.386995   1.912633   0.000000   0.000000   0.289430   4.192099   1614      0
+ 5.0440E+00   8.113969   1.215380   1.624556   0.660753 -14.928232   0.474362   0.000000   0.595436   0.013483   2.071997     10
+ 7.6096E+08   5.254252   2.093202   1.354354 -51.443123  -7.691070   0.204085   0.389714   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    4.3185229436246149D-13
+                       log_rel_run_E_err       -9.0117924214695009
+
+ fraction of H envelope left=  0.80127247328865581     
+ Thermal pulse over
+ fraction of H envelope left=  0.80122220553073664     
+ Thermal pulse over
+ fraction of H envelope left=  0.80119495192287660     
+ Thermal pulse over
+ fraction of H envelope left=  0.80116830395068572     
+ Thermal pulse over
+ fraction of H envelope left=  0.80114135316082069     
+ Thermal pulse over
+ fraction of H envelope left=  0.80108200087081605     
+ Thermal pulse over
+ fraction of H envelope left=  0.80108200086152004     
+ Thermal pulse over
+ fraction of H envelope left=  0.80104778244544905     
+ Thermal pulse over
+ fraction of H envelope left=  0.80099690905070497     
+ Thermal pulse over
+ fraction of H envelope left=  0.80093452857876324     
+ Thermal pulse over
+       1090   8.126502   4747.300   1.760530   2.098966   2.386995   1.911720   0.000000   0.000000   0.289430   4.280688   1572      0
+ 5.0386E+00   8.114764   1.219696   1.646470   0.655003 -14.899418   0.475275   0.000000   0.595436   0.013483   2.090685      5
+ 7.6196E+08   5.268334   2.099873   1.374235 -48.480887  -7.695219   0.209092   0.389714   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    2.7433784811999213D-13
+                       log_rel_run_E_err       -9.0141189201556706
+
+ fraction of H envelope left=  0.80088971153896349     
+ Thermal pulse over
+ fraction of H envelope left=  0.80086548610766661     
+ Thermal pulse over
+ fraction of H envelope left=  0.80084534871645152     
+ Thermal pulse over
+ fraction of H envelope left=  0.80080961621080926     
+ Thermal pulse over
+ fraction of H envelope left=  0.80078311964685078     
+ Thermal pulse over
+ fraction of H envelope left=  0.80075207853476771     
+ Thermal pulse over
+ fraction of H envelope left=  0.80071951877042347     
+ Thermal pulse over
+ fraction of H envelope left=  0.80066802148754956     
+ Thermal pulse over
+ fraction of H envelope left=  0.80064832691446364     
+ Thermal pulse over
+ fraction of H envelope left=  0.80061711385798762     
+ Thermal pulse over
+       1100   8.128068   4741.867   1.749867   2.105505   2.386995   1.910954   0.000000   0.000000   0.289430   4.370512   1560      0
+ 4.9589E+00   8.115478   1.224013   1.667808   0.648968 -14.870118   0.476041   0.000000   0.595436   0.013483   2.109685      6
+ 7.6290E+08   5.282265   2.106517   1.393463 -58.251193  -7.699363   0.214708   0.389714   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    4.1372810419786503D-13
+                       log_rel_run_E_err       -9.0162761964965377
+
+ fraction of H envelope left=  0.80056892760544207     
+ Thermal pulse over
+ fraction of H envelope left=  0.80054437824877389     
+ Thermal pulse over
+ fraction of H envelope left=  0.80047709222600238     
+ Thermal pulse over
+ fraction of H envelope left=  0.80045587557572917     
+ Thermal pulse over
+ fraction of H envelope left=  0.80041707838356080     
+ Thermal pulse over
+ fraction of H envelope left=  0.80039161772259182     
+ Thermal pulse over
+ fraction of H envelope left=  0.80035948879640750     
+ Thermal pulse over
+ fraction of H envelope left=  0.80033220951788109     
+ Thermal pulse over
+ fraction of H envelope left=  0.80030917368098797     
+ Thermal pulse over
+ fraction of H envelope left=  0.80025431203193598     
+ Thermal pulse over
+       1110   8.129864   4735.544   1.736883   2.113415   2.386995   1.910120   0.000000   0.000000   0.289430   4.478338   1562      0
+ 5.0372E+00   8.116223   1.229175   1.692356   0.641856 -14.836351   0.476875   0.000000   0.595436   0.013483   2.132553      5
+ 7.6392E+08   5.298545   2.114523   1.415582 -48.348853  -7.704337   0.221924   0.389714   0.001682   1.000000  0.000E+00  max increase
+ Thermal pulse over
+                               rel_E_err    3.2857269402211644D-13
+                       log_rel_run_E_err       -9.0192081558164645
+
+ fraction of H envelope left=  0.80021945517677895     
+ Thermal pulse over
+ fraction of H envelope left=  0.80018581073070760     
+ Thermal pulse over
+ fraction of H envelope left=  0.80016004696439036     
+ Thermal pulse over
+ fraction of H envelope left=  0.80011276288805266     
+ Thermal pulse over
+ fraction of H envelope left=  0.80007911844598367     
+ Thermal pulse over
+ fraction of H envelope left=  0.80005820432900054     
+ Thermal pulse over
+ fraction of H envelope left=  0.80003001574069521     
+ Thermal pulse over
+ fraction of H envelope left=  0.80000364577014782     
+ Thermal pulse over
+ fraction of H envelope left=  0.79997363856386916     
+ Thermal pulse over
+ fraction of H envelope left=  0.79994090343078428     
+ Thermal pulse over
+       1120   8.131714   4728.425   1.722407   2.121735   2.386995   1.909345   0.000000   0.000000   0.289430   4.593688   1557      0
+ 4.9579E+00   8.116870   1.234705   1.717421   0.634124 -14.799177   0.477650   0.000000   0.595436   0.013483   2.157132      7
+ 7.6490E+08   5.315417   2.122970   1.437922 -51.749272  -7.709641   0.227653   0.389714   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    4.3087864186708151D-13
+                       log_rel_run_E_err       -9.0222766919481057
+
+ fraction of H envelope left=  0.79989483176681975     
+ Thermal pulse over
+ fraction of H envelope left=  0.79986664317815315     
+ Thermal pulse over
+ fraction of H envelope left=  0.79982845218882348     
+ Thermal pulse over
+ fraction of H envelope left=  0.79980602255094746     
+ Thermal pulse over
+ fraction of H envelope left=  0.79975025158875579     
+ Thermal pulse over
+ fraction of H envelope left=  0.79972357851312181     
+ Thermal pulse over
+ fraction of H envelope left=  0.79969842095284538     
+ Thermal pulse over
+ fraction of H envelope left=  0.79967629442243315     
+ Thermal pulse over
+ fraction of H envelope left=  0.79964901514151432     
+ Thermal pulse over
+ fraction of H envelope left=  0.79961430983770976     
+ Thermal pulse over
+       1130   8.133730   4720.524   1.705498   2.131210   2.386995   1.908605   0.000000   0.000000   0.289430   4.725153   1557      0
+ 4.9631E+00   8.117440   1.240972   1.744598   0.625459 -14.757759   0.478390   0.000000   0.595436   0.013483   2.185261     10
+ 7.6591E+08   5.334006   2.132598   1.462048 -68.900860  -7.715673   0.235034   0.389714   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    3.9722573492511497D-13
+                       log_rel_run_E_err       -9.0259391193085357
+
+ fraction of H envelope left=  0.79958475728435585     
+ Thermal pulse over
+ fraction of H envelope left=  0.79955550783388218     
+ Thermal pulse over
+ fraction of H envelope left=  0.79951716529135297     
+ Thermal pulse over
+ fraction of H envelope left=  0.79948230842948709     
+ Thermal pulse over
+ fraction of H envelope left=  0.79942168781801004     
+ Thermal pulse over
+ fraction of H envelope left=  0.79940107680030148     
+ Thermal pulse over
+ fraction of H envelope left=  0.79937607079007078     
+ Thermal pulse over
+ fraction of H envelope left=  0.79935439891276361     
+ Thermal pulse over
+ fraction of H envelope left=  0.79933045376314749     
+ Thermal pulse over
+ fraction of H envelope left=  0.79929862793616335     
+ Thermal pulse over
+       1140   8.135917   4711.649   1.686191   2.141904   2.386995   1.907838   0.000000   0.000000   0.289430   4.873200   1572      0
+ 4.9579E+00   8.117870   1.248048   1.773513   0.616145 -14.710893   0.479157   0.000000   0.595436   0.013483   2.217105      6
+ 7.6691E+08   5.354145   2.143481   1.487592 -50.094303  -7.722502   0.242584   0.389714   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    4.8213883303667411D-13
+                       log_rel_run_E_err       -9.0300962603003985
+
+ fraction of H envelope left=  0.79926331642491233     
+ Thermal pulse over
+ fraction of H envelope left=  0.79923315766407854     
+ Thermal pulse over
+ fraction of H envelope left=  0.79921194043777677     
+ Thermal pulse over
+ fraction of H envelope left=  0.79915859429236902     
+ Thermal pulse over
+ fraction of H envelope left=  0.79912100950495968     
+ Thermal pulse over
+ fraction of H envelope left=  0.79910161089738430     
+ Thermal pulse over
+ fraction of H envelope left=  0.79908099987840486     
+ Thermal pulse over
+ fraction of H envelope left=  0.79906038885951181     
+ Thermal pulse over
+ fraction of H envelope left=  0.79901795442652179     
+ Thermal pulse over
+ fraction of H envelope left=  0.79899431237783169     
+ Thermal pulse over
+       1150   8.138288   4700.854   1.664138   2.154069   2.386995   1.907130   0.000000   0.000000   0.289430   5.040707   1567      0
+ 4.9593E+00   8.118121   1.256233   1.804346   0.606322 -14.657633   0.479865   0.000000   0.595436   0.013483   2.253297      5
+ 7.6791E+08   5.375996   2.155866   1.514636 -46.786981  -7.730381   0.250586   0.389714   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    4.1507154816353848D-13
+                       log_rel_run_E_err       -9.0350046275450637
+
+ fraction of H envelope left=  0.79896703309333894     
+ Thermal pulse over
+ fraction of H envelope left=  0.79893429795169324     
+ Thermal pulse over
+ fraction of H envelope left=  0.79889428833420706     
+ Thermal pulse over
+ fraction of H envelope left=  0.79887246489877373     
+ Thermal pulse over
+ fraction of H envelope left=  0.79884700422914146     
+ Thermal pulse over
+ fraction of H envelope left=  0.79881426908867870     
+ Thermal pulse over
+ fraction of H envelope left=  0.79878335256619848     
+ Thermal pulse over
+ fraction of H envelope left=  0.79876334775071611     
+ Thermal pulse over
+ fraction of H envelope left=  0.79872697537448933     
+ Thermal pulse over
+ fraction of H envelope left=  0.79870242401405611     
+ Thermal pulse over
+       1160   8.140932   4688.745   1.638969   2.168459   2.386995   1.906427   0.000000   0.000000   0.289430   5.235661   1566      0
+ 4.9645E+00   8.118125   1.265804   1.837897   0.596473 -14.594805   0.480568   0.000000   0.595436   0.013483   2.295624      6
+ 7.6893E+08   5.400256   2.170528   1.543943 -69.778550  -7.739678   0.259010   0.389714   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err    5.1973624307511505D-13
+                       log_rel_run_E_err       -9.0407653613478676
+
+ fraction of H envelope left=  0.79867241679987577     
+ Thermal pulse over
+ fraction of H envelope left=  0.79865604921932132     
+ Thermal pulse over
+ fraction of H envelope left=  0.79863437733236453     
+ Thermal pulse over
+ fraction of H envelope left=  0.79860209683666217     
+ Thermal pulse over
+ fraction of H envelope left=  0.79856966479326219     
+ Thermal pulse over
+ fraction of H envelope left=  0.79852632104450039     
+ Thermal pulse over
+ fraction of H envelope left=  0.79849782934220681     
+ Thermal pulse over
+ fraction of H envelope left=  0.79849782931970648     
+ Thermal pulse over
+ fraction of H envelope left=  0.79846751899482293     
+ Thermal pulse over
+ fraction of H envelope left=  0.79843789064737480     
+ Thermal pulse over
+       1170   8.144058   4672.846   1.609001   2.186633   2.386995   1.905757   0.000000   0.000000   0.289430   5.477834   1578      0
+ 5.0327E+00   8.117735   1.278015   1.876274   0.586960 -14.516700   0.481238   0.000000   0.595436   0.013483   2.348497      5
+ 7.7000E+08   5.428752   2.189050   1.577853 -46.507287  -7.751583   0.269156   0.389714   0.001682   1.000000  0.000E+00       dX/X h1
+ Thermal pulse over
+                               rel_E_err   -1.8854005783212085D-14
+                       log_rel_run_E_err       -9.0486155886216313
+
+ fraction of H envelope left=  0.79839159164033902     
+ Thermal pulse over
+ fraction of H envelope left=  0.79837204147253638     
+ Thermal pulse over
+ fraction of H envelope left=  0.79834461062793671     
+ Thermal pulse over
+ fraction of H envelope left=  0.79831123138730131     
+ Thermal pulse over
+ fraction of H envelope left=  0.79829353772544454     
+ Thermal pulse over
+ fraction of H envelope left=  0.79827357079112271     
+ Thermal pulse over
