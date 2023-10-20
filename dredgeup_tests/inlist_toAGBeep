@@ -1,0 +1,66 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! authors: G. C. Cinquegrana & M. Joyce 
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+&star_job
+
+      load_saved_model = .true.
+      load_model_filename = 'TACHeB.mod'
+
+      save_model_when_terminate = .true.
+      save_model_filename = 'postAGBeep.mod'
+
+/ !end of star_job namelist
+
+&eos
+
+/ ! end of eos namelist
+
+
+&kap
+
+/ ! end of kap namelist
+
+&controls
+
+    log_directory = 'LOGS/topostAGBeep'
+
+! temporally resolve the thermal pulse (and interpulse)
+
+    delta_lgL_He_limit = 0.01
+    lgL_He_burn_min = 2.0
+
+    !!!!!!!!!!!!!!!!!!!!!!!!
+    !! new limit format for 23051
+    !!!!!!!!!!!!!!!!!!!!!!!!!
+
+    dX_limit_species(1) = 'h1'
+    dX_limit_min_X(1) = 1d-2
+     
+    dX_limit(1) = 0.1
+    dX_div_X_limit_min_X(1) = 1d-5
+    dX_div_X_limit(1) = 0.5
+
+! overshooting
+! first match will be applied
+
+      overshoot_scheme(1) = 'exponential'
+      overshoot_zone_type(1) = 'nonburn'
+      overshoot_zone_loc(1) = 'shell'
+      overshoot_bdy_loc(1) = 'bottom'
+      overshoot_f(1) = 0.014
+      overshoot_f0(1) = 0.004
+
+      energy_eqn_option = 'dedt'
+      use_gold2_tolerances = .true.
+      max_abs_rel_run_E_err = 1d-2
+
+      varcontrol_target = 1d-4
+      mesh_delta_coeff = 1.0
+      time_delta_coeff = 1.0
+
+      convergence_ignore_equL_residuals = .true. !rigidity of residuals is too low to converge through He flash or runaway events (tp-agb). this says to ignore those conditions, only turn on for those phases where needed. 
+
+/ ! end of kap namelist

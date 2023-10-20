@@ -1,0 +1,75 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! authors: G. C. Cinquegrana & M. Joyce 
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+&star_job
+
+      history_columns_file = 'history_ts.list' 
+
+! network
+
+      change_net = .true.
+      new_net_name = 'pp_extras.net'
+
+      show_net_species_info = .true.
+
+! opacities
+
+      initial_zfracs = 8 ! for A09 solar scaling
+
+/ !end of star_job namelist
+
+&eos      
+      use_Skye = .true.  
+      use_PC = .false.
+/ ! end of eos namelist
+
+&kap      
+
+      Zbase = 0.0134d0
+
+      use_Type2_opacities = .true.
+      kap_file_prefix = 'a09'
+      kap_CO_prefix = 'a09_co' 
+      kap_lowT_prefix = 'AESOPUS'
+      AESOPUS_filename = 'AESOPUS_A09_GC.h5' ! for Z=0.0134 and Z=0.00423745. 
+
+/ ! end of kap namelist
+
+&controls
+
+      initial_mass = 2.4 
+      initial_y = 0.277
+      initial_z = 0.0134 
+
+      mixing_length_alpha = 1.931
+      MLT_option = 'Henyey'
+
+      num_trace_history_values = 2
+      trace_history_value_name(1) = 'rel_E_err'
+      trace_history_value_name(2) = 'log_rel_run_E_err'
+
+      atm_option = 'T_tau'
+      atm_T_tau_relation = 'Eddington'
+      atm_T_tau_opacity = 'fixed'
+
+      cool_wind_RGB_scheme = 'Reimers'
+      cool_wind_AGB_scheme = 'Blocker'
+      RGB_to_AGB_wind_switch = 1d-4
+      Reimers_scaling_factor = 0.477d0
+      Blocker_scaling_factor = 0.01d0 
+
+      use_Ledoux_criterion = .false.
+
+      photo_interval = -1
+      profile_interval = -1
+      history_interval = 1 
+      terminal_interval = 10
+      write_header_frequency = 100
+
+      calculate_Brunt_B = .true.
+      calculate_Brunt_N2 = .true.
+
+/ ! end of controls namelist

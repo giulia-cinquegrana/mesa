@@ -1,0 +1,43 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! authors: G. C. Cinquegrana & M. Joyce 
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+&star_job
+      create_pre_main_sequence_model = .true.
+      pre_ms_relax_to_start_radiative_core = .false.
+
+      save_model_when_terminate = .true.
+      save_model_filename = 'TACHeB.mod'
+
+      required_termination_code_string = 'xa_central_lower_limit'
+
+/ !end of star_job namelist
+
+&eos
+
+/ ! end of eos namelist
+
+
+&kap
+
+/ ! end of kap namelist
+
+&controls
+
+      log_directory = 'LOGS/toTACHeB'
+
+      ! stopping criterion
+      xa_central_lower_limit_species(1) = 'he4'
+      xa_central_lower_limit(1) = 1d-6
+
+      energy_eqn_option = 'dedt'
+      use_gold2_tolerances = .true.
+      max_abs_rel_run_E_err = 1d-2
+
+      varcontrol_target = 1d-3
+      mesh_delta_coeff = 1.0
+      time_delta_coeff = 1.0
+
+/ ! end of kap namelist
