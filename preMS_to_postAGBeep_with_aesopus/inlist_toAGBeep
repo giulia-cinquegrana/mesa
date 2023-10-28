@@ -1,8 +1,9 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !
-! authors: G. C. Cinquegrana & M. Joyce 
+!preMS_to_postAGBeep_with_aesopus.
 !
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
 &star_job
 
@@ -27,24 +28,15 @@
 
     log_directory = 'LOGS/topostAGBeep'
 
-! temporally resolve the thermal pulse (and interpulse)
+      delta_lgL_He_limit = 0.01
+      lgL_He_burn_min = 2.0
 
-    delta_lgL_He_limit = 0.01
-    lgL_He_burn_min = 2.0
-
-    !!!!!!!!!!!!!!!!!!!!!!!!
-    !! new limit format for 23051
-    !!!!!!!!!!!!!!!!!!!!!!!!!
-
-    dX_limit_species(1) = 'h1'
-    dX_limit_min_X(1) = 1d-2
+      dX_limit_species(1) = 'h1'
+      dX_limit_min_X(1) = 1d-2
      
-    dX_limit(1) = 0.1
-    dX_div_X_limit_min_X(1) = 1d-5
-    dX_div_X_limit(1) = 0.5
-
-! overshooting
-! first match will be applied
+      dX_limit(1) = 0.1
+      dX_div_X_limit_min_X(1) = 1d-5
+      dX_div_X_limit(1) = 0.5
 
       overshoot_scheme(1) = 'exponential'
       overshoot_zone_type(1) = 'nonburn'
@@ -61,6 +53,6 @@
       mesh_delta_coeff = 1.0
       time_delta_coeff = 1.0
 
-      convergence_ignore_equL_residuals = .true. !rigidity of residuals is too low to converge through He flash or runaway events (tp-agb). this says to ignore those conditions, only turn on for those phases where needed. 
+      convergence_ignore_equL_residuals = .true. ! rigidity of residuals can be too low to converge through He flash or runaway events (tp-agb).
 
 / ! end of kap namelist

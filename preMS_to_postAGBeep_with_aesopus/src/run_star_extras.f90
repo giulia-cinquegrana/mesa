@@ -183,7 +183,7 @@
                  endif
 
                  open(1, file='agb_stats.dat', action='write', position='append')
-                 write(1,*) 'TP_count=', TP_count, 'age_at_TP=', age_at_TP, 'mcore_at_TP=', mcore_at_TP, 'surface_opacity', surface_opacity, 'c12_c13', c12_c13, 'n14_n15', n14_n15, 'c_o', c_o
+                 write(1,*) TP_count, age_at_TP, mcore_at_TP, surface_opacity, c12_c13, n14_n15, c_o
                  close(1)
              else
                  if (s% power_h_burn/s% power_he_burn .gt. 10) active_thermalpulse = .false. 
@@ -318,7 +318,7 @@
 ! Termination condition: third to last thermal pulse
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-!         if (TP_count == 41) extras_finish_step = terminate ! leave? not?
+         if (TP_count == 41) extras_finish_step = terminate ! leave? not?
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Termination condition: Post-AGB EEP

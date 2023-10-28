@@ -1,10 +1,12 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !
-! authors: G. C. Cinquegrana & M. Joyce 
+!preMS_to_postAGBeep_with_aesopus.
 !
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
 &star_job
+
       create_pre_main_sequence_model = .true.
       pre_ms_relax_to_start_radiative_core = .false.
 
